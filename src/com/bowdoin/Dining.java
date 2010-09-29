@@ -1,5 +1,9 @@
 package com.bowdoin;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
+
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -21,8 +25,8 @@ public class Dining extends Activity {
         mWebView.getSettings().setBuiltInZoomControls(true);
         mWebView.getSettings().setTextSize(WebSettings.TextSize.LARGER);
  
-        mMeal = "Breakfast";
         mHall = "48";
+        mMeal = getCurrentMeal(mHall);
         
         mBreakfast = (Button) findViewById(R.id.breakfast);
         mBreakfast.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +80,24 @@ public class Dining extends Activity {
         updateView();
         
     }
+	
+	// Roughly guesses which meal is currently going on
+	// easy enough to make this correct per-hall with some sort of
+	// scheduling object
+	private String getCurrentMeal(String hall) {
+		Calendar calendar = GregorianCalendar.getInstance(TimeZone.getDefault());
+		int hours = calendar.get(Calendar.HOUR_OF_DAY);
+		String meal;
+		
+		if (hours > 14)
+			meal = "Dinner";
+		else if (hours > 10)
+			meal = "Lunch";
+		else
+			meal = "Breakfast";
+	
+		return meal;
+	}
 	
 	private void clearColor() {
 		mBreakfast.setTextColor(Color.WHITE);

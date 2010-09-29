@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 
@@ -18,6 +19,7 @@ public class Dining extends Activity {
         mWebView = (WebView) findViewById(R.id.webview);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.getSettings().setBuiltInZoomControls(true);
+        mWebView.getSettings().setTextSize(WebSettings.TextSize.LARGER);
  
         mMeal = "Breakfast";
         mHall = "48";
@@ -62,7 +64,7 @@ public class Dining extends Activity {
             }
         });
         
-        mThorn = (Button) findViewById(R.id.thorn);
+        mThorn = (Button) findViewById(R.id.thorne);
         mThorn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	mHall = "49";

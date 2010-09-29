@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="@drawable/android:color/white"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <LinearLayout
@@ -64,7 +65,8 @@
           <WebView  xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/webview"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"/>
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="15dp" />
       </LinearLayout>
       <LinearLayout
       android:background="#AAAAAAAA"
@@ -85,7 +87,7 @@
             android:layout_weight="1"
             android:text="Moulton Union" />
           <Button
-            android:id="@+id/thorn"
+            android:id="@+id/thorne"
             android:background="@drawable/black_white_gradient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -94,6 +96,6 @@
             android:layout_marginRight="3dip"
             android:layout_weight="1"
             android:textSize="18px"
-            android:text="Thorn Hall" />
+            android:text="Thorne Hall" />
       </LinearLayout>
 </LinearLayout>
